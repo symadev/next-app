@@ -23,7 +23,7 @@ export default  async function posts() {
         {
             posts.map((post)=>{
                 return(
-                    <div className="border border-amber-100 rounded-3xl text-center text-3xl p-6" key = {post.id}>
+                    <div className="border border-amber-100 rounded-3xl text-center testing-purpose-css-class text-3xl p-6" key = {post.id}>
                         <p>{post.title}</p>
                         <p>{post.title}</p>
                         <Link className="underline" href={`/posts/${post.id}`}>Details</Link>
