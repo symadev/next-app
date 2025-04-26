@@ -9,6 +9,21 @@ export const getSinglePosts = async (post_id) =>{
     return data;
 }
 
+// we can import here through metadata
+export async function generateMetadata({ params, }) {
+  const id = (await params).id;
+ 
+  // fetch post information
+  const SinglePosts = await getSinglePosts(id);
+  
+ 
+  return {
+    title: SinglePosts .title,
+    keywords: ['Next.js', 'React','Learning','Playground', 'JavaScript'],
+    description: SinglePosts .description,
+  }
+}
+
 
 export default  async function SinglePosts({params}) {
     const p = await params;

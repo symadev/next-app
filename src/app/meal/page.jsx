@@ -2,6 +2,17 @@
 
 import { useState } from "react";
 
+// Next.js এ metadata হলো server-side only কনসেপ্ট।
+//  আর "use client" মানে হলো এই ফাইলটা ক্লায়েন্ট-সাইডে রান হবে।
+
+
+// export const metadata = {
+//   title: "Meals ",
+//   description: "meals loaded from mealDb api",
+// };
+
+
+
 export default function MealSearch() {
   const [query, setQuery] = useState("");
   const [meal, setMeal] = useState(null);

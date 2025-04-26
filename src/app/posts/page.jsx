@@ -14,6 +14,11 @@ export const getPosts = async () =>{
 
 // তারপর সেই ডেটা JSON ফর্ম্যাটে কনভার্ট করে return করছে।
 
+export const metadata = {
+    title: "All Posts | Learning Next Js",
+    description: "Learning Next Js as Best",
+  };
+
 
 
 export default  async function posts() {
