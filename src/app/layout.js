@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono ,Poppins} from "next/font/google";
 import "./globals.css";
 import NavBar from "@/navbar";
 
@@ -12,6 +12,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
+const poppins = Poppins({
+  weight: ["600", "700", "800",],
+  subsets: ["latin"],
+})
+
 // ডেটাকে সহজে খুঁজে পেতে: মেটাডাটা ডেটার বিষয়বস্তু, ধরন, তৈরি করার সময় ইত্যাদি সম্পর্কে তথ্য দেয়, যাতে পরে সহজে সার্চ বা ফিল্টার করা যায়।
 
 export const metadata = {
@@ -23,7 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.className} antialiased`}
       >
   <NavBar></NavBar>
         {children}
