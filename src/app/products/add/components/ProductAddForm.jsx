@@ -1,6 +1,10 @@
 "use client";
+
+import { useRouter } from "next/navigation";
+
 //we here load the data of the from
 export default  function ProductAddForm() {
+    const router = useRouter()
     const handleSubmit = async (e)=>{
      e.preventDefault();
      const form = e.target;
@@ -15,6 +19,7 @@ export default  function ProductAddForm() {
     });
     const result = await response.json();
     console.log( result)
+    router.push ('/products');
     }
     return (
         <div>
