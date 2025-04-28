@@ -3,12 +3,21 @@
 
 
 
-export default  async function ProductFetch() {
-    const  res = await fetch("http://localhost:3001/api/item")
-    const data = await res.json();
+export default async function ProductFetch() {
+  const res = await fetch("http://localhost:3000/api/item", {
+    cache: "force-cache", 
+  });
+  const data = await res.json();
 
   return (
-    <div><p>
-        {JSON.stringify(data)}</p></div>
-  )
+    <ul className="text-center mt-8">
+      {
+        data?.map((singleProduct) => (
+          <li key={singleProduct._id}>
+            {singleProduct?.ProductName}
+          </li>
+        ))
+      }
+    </ul>
+  );
 }

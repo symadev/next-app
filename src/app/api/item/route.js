@@ -2,6 +2,7 @@
 
 
 import dbConnect from "@/lib/bdConnection";
+import { revalidatePath } from "next/cache";
 
 export async function GET() {
 
@@ -18,7 +19,7 @@ export async function POST(req) {
   const postData = await req.json();
   //after that we post the data through api client
   const result = await dbConnect("Next_2").insertOne(postData)
-
+revalidatePath("/products")
 
   return Response.json(result);
 }
